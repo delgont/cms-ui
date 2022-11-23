@@ -1,0 +1,46 @@
+{
+    "name": "delgont/ui",
+    "description" : "Delgont CMS Bootstrap UI",
+    "keywords": [
+        "Laravel CMS",
+        "laravel", 
+        "Content Management System"
+    ],
+    "homepage": "https://github.com/delgont/delgont-ui",
+    "type" : "library",
+    "license" : "MIT",
+    "authors" : [
+        {
+            "name" : "Stephen Okello Omoding",
+            "email" : "okellostephenomoding@gmail.com",
+            "role" : "Developer"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^6.0",
+        "laravel/helpers": "1.5.0"
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Delgont\\CmsUi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Delgont\\CmsUi\\Test\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Delgont\\CmsUi\\DelgontUiServiceProvider"
+
+            ]
+        }
+    }
+}
