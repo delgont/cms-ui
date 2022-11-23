@@ -33,8 +33,8 @@
             <i class="bx bx-comment bx-sm text-dark"></i>
             <span class="badge badge-danger badge-counter">{{ $post->comments_count }}</span>
         </a>
-        <div class="dropdown-menu dropdown-list shadow-sm p-2 custom-scrollbar scrollable" aria-labelledby="authorDropdown">
-            <h6 class="dropdown-header">
+        <div class="dropdown-menu dropdown-list shadow-smcustom-scrollbar scrollable p-0" aria-labelledby="authorDropdown">
+            <h6 class="dropdown-header bg-light text-primary font-weight-bold border-bottom border-light">
                 Post Comments
             </h6>
             @if (count($post->comments))
@@ -53,7 +53,9 @@
                       </a>
                 @endforeach
             @else
-                
+                <div class="px-3 py-3 text-dark">
+                    There are no comments for this post .......
+                </div>
             @endif
             <a class="dropdown-item text-center small text-gray-500" href="{{ route('delgont.posts.comments', ['id' => $post->id]) }}">Show All Comments</a>
         </div>

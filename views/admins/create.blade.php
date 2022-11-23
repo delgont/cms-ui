@@ -25,7 +25,7 @@
             @csrf
             <div class="col-lg-3">
 
-                <div class="card alert alert-light p-0">
+                <div class="card alert alert-light p-0 mb-2">
                     <img class="card-img-top" src="{{asset('img/avator.jpg')}}" alt="Card image cap" id="avatorHolder" />
                     <div class="card-body p-3">
                       <h6 class="card-title mb-2 text-primary font-weight-bold">Choose File</h6>
@@ -33,9 +33,18 @@
                     </div>
                 </div>
 
+                <div class="card alert alert-light p-0">
+                    <div class="card-body p-3">
+                      <div class="form-check form-check-inline">
+                        <input id="my-input" class="form-check-input" type="checkbox" name="" value="true">
+                        <label for="my-input" class="form-check-label small">Send Login Details</label>
+                      </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-5">
 
                 <div class="card mb-4 alert alert-light p-0">
                     <div class="card-body">
@@ -99,9 +108,17 @@
 
             </div>
 
-            <div class="col-lg-3">
-                <button type="submit" class="create-user-form-button btn btn-md btn-primary" id="createUserFormButton">Register</button>
+            <div class="col-lg-4  custom-scrollbar scrollable h-100">
+                <div class="card alert alert-light p-0 border border-light">
+                    <div class="card-body">
+                        hello
+                    </div>
+                </div>
+                <div class="py-3 text-right">
+                    <button type="submit" class="create-user-form-button alert alert-success p-1 border border-primary font-weight-bold" id="createUserFormButton"><i class="bx bx-user"></i> Register</button>
+                </div>
             </div>
+
 
         </form>
     </div>

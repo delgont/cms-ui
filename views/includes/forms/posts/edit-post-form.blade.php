@@ -9,21 +9,21 @@
                     @include('delgont::includes.dropdowns.choose-post-parent-dropdown', ['currentPostParent' => ($post->parent) ? $post->parent->post_title : 'Choose Parent Post Or Page'])
                 </div>
                 <div class="col-lg-3">
-                    <small>Post Parent</small>
+                    <small class="text-primary font-weight-bold">Post Parent</small>
                     <h6 class="mb-0 small text-primary" id="postParentHolder" data-toggle="tooltip" title="{{ ($post->parent) ? $post->parent->post_title : 'Choose Parent' }}">{{ ($post->parent) ? str_limit($post->parent->post_title, 9) : 'Choose Parent' }}</h6>
                 </div>
                 <div class="col-lg-1">
                     @includeIf('delgont::includes.dropdowns.choose-post-template-dropdown', ['currentPostTemplate' => ($post->template) ? $post->template->name : 'Choose'])
                 </div>
                 <div class="col-lg-3">
-                    <small>Post Template</small>
+                    <small class="text-primary font-weight-bold">Post Template</small>
                     <h6 class="mb-0 small text-primary">{{ ($post->template) ? $post->template->name : '' }}</h6>
                 </div>
                 <div class="col-lg-1">
                     @includeIf('delgont::includes.dropdowns.choose-menu-dropdown', ['currentMenu' => ($post->menu) ? $post->menu->name : 'Choose Menu'])
                 </div>
                 <div class="col-lg-3">
-                    <small>Menu</small>
+                    <small class="text-primary font-weight-bold">Menu</small>
                     <h6 class="mb-0 small text-primary" id="menuNameHolder">{{ ($post->menu) ? $post->menu->name : '' }}</h6>
                 </div>
                 <input type="hidden" name="template_id" value="{{ old('template_id') ?? $post->template_id }}" id="templateIdInput" />
@@ -86,11 +86,11 @@
         <!-- Post Category -->
         <div class="card p-0 alert alert-light">
             <div class="card-body">
-                <h6 class="mb-2 text-capitalize text-dark font-weight-bold">Categorize your post</h6>
+                <h6 class="mb-2 text-capitalize text-dark font-weight-bold border-bottom border-light pb-2">Categorize your post</h6>
                 @if (count($categories))
                     @foreach ($categories as $category)
                         <div class="form-check {{ ($category->parent_id) ? 'ml-3' : '' }}">
-                            <label class="form-check-label">
+                            <label class="form-check-label text-primary font-weight-bold">
                                 @if (count($post->categories))
                                     @php
                                         $post_categories_ids = [];

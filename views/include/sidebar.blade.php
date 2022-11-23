@@ -111,22 +111,15 @@
     </a>
     <div id="collapseUsers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item ml-lg-4" href="{{route('delgont.posts')}}" >{{ __('All Users') }}</a>
+        <a class="collapse-item ml-lg-4" href="{{route('delgont.users')}}" >{{ __('All Users') }}</a>
         <a class="collapse-item ml-lg-4" href="{{route('delgont.users.admins')}}">{{ __('Admins') }}</a>
       </div>
     </div>
   </li>
 
-        <!-- Nav Item - Account -->
-        <li class="nav-item sidebar-nav-item">
-          <a class="nav-link" href="{{ route('delgont.account') }}">
-            <i class='bx bx-user sidebar-icon'></i>
-            <span>Acount</span></a>
-        </li>
-
     <!-- Settings -->
     <li class="nav-item sidebar-nav-item">
-      <a class="nav-link sidebar-nav-link" href="{{ route('delgont.settings.general') }}" data-toggle="collapse" data-target="#collapseSettings" aria-expanded="true" aria-controls="collapseUsers">
+      <a class="nav-link sidebar-nav-link dev" href="{{ route('delgont.settings.general') }}" data-toggle="collapsedev" data-target="#collapseSettings" aria-expanded="true" aria-controls="collapseUsers">
         <i class='bx bx-cog sidebar-icon bx-sm'></i>
         <span>Settings</span>
       </a>

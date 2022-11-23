@@ -8,7 +8,7 @@
         </h6>
         @if (count($templates) && count($templates) > 0)
             @foreach ($templates as $template)
-                <a class="dropdown-item d-flex align-items-center py-3 select-post-template" id="selectPostTemplate" data-templateId="{{ $template->id }}" href="#">
+                <a class="dropdown-item d-flex align-items-center py-2 select-post-template" id="selectPostTemplate" data-templateId="{{ $template->id }}" href="#">
                     <div class="mr-3">
                         <div class="rounded-circle">
                         <i class='bx bx-layout bx-sm text-danger'></i>
@@ -16,7 +16,7 @@
                     </div>
                     <div>
                         <span class="font-weight-bold text-capitalize">{{ $template->name }}</span>
-                        <div class="small text-gray-500">The description of the template</div>
+                        <div class="small text-primary">{{ str_limit($template->description, 15) }}</div>
                     </div>
                 </a>
             @endforeach

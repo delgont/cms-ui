@@ -41,7 +41,7 @@
   
     <!-- Nav Item - Notifications -->
     <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle dev" href="#" id="alertsDropdown" role="button" data-toggle="dropdowndev" aria-haspopup="true" aria-expanded="false">
           <i class="bx bx-bell  bx-sm navbar-icon text-primary"></i>
           <!-- Counter - Alerts -->
           <span class="badge badge-danger badge-counter notifications-counter" id="notificationsCounter" data-url="{{ route('delgont.account.notifications.count') }}"></span>
@@ -122,14 +122,21 @@
             <i class="bx bx-group bx-sm navbar-icon text-secondary"></i>
           </a>
           <!-- Dropdown - Admin Information -->
-          <div class="dropdown-menu dropdown-menu-right shadow-sm animated--grow-in" aria-labelledby="userDropdown">
-              <a class="dropdown-item" href="{{ route('delgont.users.create') }}">
-                <i class="bx bx-user-plus mr-2 text-gray-400"></i>
-                Add User
-              </a>
-              <a class="dropdown-item" href="{{ route('delgont.users') }}">
-                <i class="bx bx-group mr-2 text-gray-400"></i>
+          <div class="dropdown-menu dropdown-menu-right shadow-sm animated--grow-in p-0" aria-labelledby="userDropdown">
+            <a class="dropdown-item py-2 font-weight-bold bg-light" href="{{ route('delgont.account') }}">
+              Manage Users
+            </a>
+              <a class="dropdown-item py-2" href="{{ route('delgont.users') }}">
+                <i class="bx bx-group mr-2 text-dark font-weight-bold"></i>
                 Users
+              </a>
+              <a class="dropdown-item py-2 border-top border-light" href="{{ route('delgont.users.admins') }}">
+                <i class="bx bx-group mr-2 text-dark font-weight-bold"></i>
+                Admins
+              </a>
+              <a class="dropdown-item py-2" href="{{ route('delgont.users.admins') }}">
+                <i class="bx bx-user-plus mr-2 text-dark font-weight-bold"></i>
+                Register
               </a>
           </div>
       </li>
@@ -138,26 +145,32 @@
 
       <li class="nav-item dropdown no-arrow">
           <a class="nav-link dropdown-toggle p-2" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="mr-2 d-none d-lg-inline username text-dark">{{ str_limit(auth()->user()->name, 12) }}</span>
-              <img class="navbar-img rounded-circle" src="{{ (auth()->user()->avator) ? asset(auth()->user()->avator->url) : asset('img/default-avator.jpg') }}"  style="width: 2rem; height: 2rem;"/>
+              <span class="mr-2 d-none d-lg-inline username text-dark font-weight-bold">{{ str_limit(auth()->user()->name, 12) }}</span>
+              <img class="navbar-img rounded-circle border border-light" src="{{ (auth()->user()->avator) ? asset(auth()->user()->avator->url) : asset('img/default-avator.jpg') }}"  style="width: 2rem; height: 2rem;"/>
           </a>
           <!-- Dropdown - Admin Information -->
-          <div class="dropdown-menu dropdown-menu-right shadow-sm p-2" aria-labelledby="userDropdown">
-              <a class="dropdown-item" href="{{ route('delgont.account') }}">
-                <i class="bx bx-user mr-2 text-gray-400"></i>
+          <div class="dropdown-menu dropdown-menu-right shadow-sm p-0" aria-labelledby="userDropdown">
+            <a class="dropdown-item py-2 font-weight-bold bg-light" href="{{ route('delgont.account') }}">
+              Manage Account
+            </a>
+              <a class="dropdown-item py-2" href="{{ route('delgont.account') }}">
+                <i class="bx bx-user mr-1 text-dark font-weight-bold"></i>
                 Account
               </a>
-              <a class="dropdown-item" href="">
-                <i class="bx bx-cog mr-2 text-gray-400"></i>
+              <a class="dropdown-item py-2" href="{{ route('delgont.account') }}">
+                <i class="bx bx-bell mr-2 text-dark font-weight-bold"></i>
+                Notifications
+              </a>
+              <a class="dropdown-item py-2" href="">
+                <i class="bx bx-cog mr-1 text-dark font-weight-bold"></i>
                 Settings
               </a>
-              <a class="dropdown-item" href="{{ route('delgont.account.activitylog') }}">
-                <i class="bx bx-menu mr-2  text-gray-400"></i>
+              <a class="dropdown-item py-2" href="{{ route('delgont.account.activitylog') }}">
+                <i class="bx bx-menu mr-1  text-dark font-weight-bold"></i>
                 Activity Log
               </a>
-              <div class="dropdown-divider"></div>
-              <a href="" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
-                  <i class="bx bx-sign-out mr-2 text-gray-400"></i>
+              <a href="" class="dropdown-item py-2 border-top border-light" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
+                  <i class="bx bx-log-out mr-1 text-dark font-weight-bold"></i>
                    Logout
               </a>
               <form id="logoutForm" action="{{ route('delgont.logout') }}" method="POST" style="display: none;">
