@@ -49,6 +49,7 @@
           <a class="collapse-item ml-lg-4" href="{{route('delgont.posts')}}" >{{ __('All Posts') }}</a>
           <a class="collapse-item ml-lg-4" href="{{route('delgont.posts.create')}}">{{ __('Create Post') }}</a>
           <a class="collapse-item ml-lg-4" href="{{route('delgont.posts.posttypes')}}">{{ __('Post Types') }}</a>
+          <a class="collapse-item ml-lg-4" href="{{route('delgont.posts.categories')}}">{{ __('Post Categories') }}</a>
           <a class="collapse-item ml-lg-4" href="{{route('delgont.templates')}}">{{ __('Templates') }}</a>
           <a class="collapse-item ml-lg-4" href="{{route('delgont.posts.posttypes')}}">{{ __('Sections') }}</a>
         </div>
@@ -69,19 +70,6 @@
         <span>Categories</span></a>
     </li>
 
-    <!-- Categories -->
-    <li class="nav-item sidebar-nav-item">
-      <a class="nav-link" href="{{route('delgont.downloads')}}">
-        <i class='bx bx-download sidebar-icon'></i>
-        <span>Downloads</span></a>
-    </li>
-
-    <!-- Nav Item - Posts -->
-    <li class="nav-item sidebar-nav-item d-none">
-      <a class="nav-link" href="">
-        <i class='bx bx-images sidebar-icon'></i>
-        <span>Media</span></a>
-    </li>
 
     <hr class="sidebar-divider">
 

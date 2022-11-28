@@ -49,8 +49,8 @@
                       <div class="container-fluid mt-4">
                           <div class="row">
                               <div class="col-12 col-lg-3"><h1 class="h1 page-heading">@yield('pageHeading')</h1></div>
-                              <div class="col-lg-7 text-right">@yield('actions')</div>
-                              <div class="col-lg-2 text-left actions-right">
+                              <div class="col-lg-6 text-right">@yield('actions')</div>
+                              <div class="col-lg-3 text-center actions-right">
                                 @yield('actions-right')
                               </div>
                           </div>

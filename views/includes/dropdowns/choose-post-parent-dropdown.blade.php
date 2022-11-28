@@ -6,7 +6,8 @@
         <h6 class="dropdown-header py-3 bg-light text-dark">
             Choose Parent Post
         </h6>
-        @if (count($posts))
+        <div class="">
+            @if (count($posts))
             @foreach ($posts as $post)
                 <a class="dropdown-item d-flex align-items-center py-2 select-post-parent" id="selectPostParent" data-parentId="{{ $post->id }}" data-parent="{{ $post->post_title }}" href="#">
                     <div>
@@ -18,6 +19,7 @@
         @else
             
         @endif
-            <a class="dropdown-item text-center small text-gray-500 py-3" href=#">Show All Posts</a>
+        </div>
+        <a class="dropdown-item text-center small text-gray-500 py-3" href=#">Show All Posts</a>
     </div>
 </div>

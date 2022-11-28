@@ -123,11 +123,11 @@
         <div class="card mb-2 alert alert-primary p-1">
             <div class="card-body py-2">
                 @if (count($posttypes) > 0)
-                <small>Choose the type of posts to show as listing on this Post | Page</small>
+                <small>Choose the type of posts to associate with this post</small>
                 <div class="dropdown">
-                    <a id="my-dropdown" class="dropdown-toggle btn btn-sm btn-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a id="my-dropdown" class="dropdown-toggle btn btn-sm btn-white border border-primary my-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span style="font-size: 14px;" class="text-capitalize" data-toggle="tooltip" title="Select Post Type">
-                            {{ ($post->postsOfType) ? $post->postsOfType->postType->name.' Posts'  : 'Choose Post Type' }}
+                            {{ ($post->postsOfType) ? $post->postsOfType->postType->name  : 'Choose Post Type' }}
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-list shadow-lg animated--grow-in p-0 scrollable custom-scrollbar" aria-labelledby="my-dropdown" style="border-radius: 0.rem;">

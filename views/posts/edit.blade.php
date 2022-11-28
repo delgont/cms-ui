@@ -61,22 +61,6 @@
         </div>
     </div>
 
-    <!-- Downloadables Dropdown -->
-    <div class="dropdown show d-inline">
-        <a href="#" class="dropdown-toggle" href="#" role="button" id="downloadablesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="bx bx-download bx-sm text-dark"></i>
-            <span class="badge badge-danger badge-counter">{{ $post->downloadables_count }}</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="authorDropdown">
-            @if (count($post->downloadables))
-                @foreach ($post->downloadables as $download)
-                    <a class="dropdown-item" href="{{ route('delgont.downloads.show', ['id' => $download->id]) }}"><i class="bx bx-file"></i><span class="text-capitalize p-2">{{ $download->description }}</span></a>
-                @endforeach
-            @else
-                
-            @endif
-        </div>
-    </div>
 @endsection
 
 @section('actions-right')
@@ -94,6 +78,7 @@
     </a>
     <a href="{{ route('delgont.posts.create.duplicate', ['id' => $post->id]) }}" class="" data-toggle="tooltip" title="Duplicate Post"><i class="bx bx-duplicate bx-sm"></i></a>
     <a href="{{ route('delgont.posts.show', ['id' => $post->id]) }}" class="" data-toggle="tooltip" title="View Post"><i class="bx bx-show bx-sm"></i></a>
+    <a href="{{ route('delgont.posts.show', ['id' => $post->id]) }}" class="" data-toggle="tooltip" title="Post Settings"><i class="bx bx-cog bx-sm"></i></a>
 @endsection
 
 

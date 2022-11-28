@@ -153,20 +153,20 @@
             <a class="dropdown-item py-2 font-weight-bold bg-light" href="{{ route('delgont.account') }}">
               Manage Account
             </a>
-              <a class="dropdown-item py-2" href="{{ route('delgont.account') }}">
+              <a class="dropdown-item dev py-2" href="{{ route('delgont.account') }}">
                 <i class="bx bx-user mr-1 text-dark font-weight-bold"></i>
                 Account
               </a>
-              <a class="dropdown-item py-2" href="{{ route('delgont.account') }}">
+              <a class="dropdown-item dev py-2" href="{{ route('delgont.account') }}">
                 <i class="bx bx-bell mr-2 text-dark font-weight-bold"></i>
                 Notifications
               </a>
-              <a class="dropdown-item py-2" href="">
+              <a class="dropdown-item dev py-2" href="">
                 <i class="bx bx-cog mr-1 text-dark font-weight-bold"></i>
                 Settings
               </a>
               <a class="dropdown-item py-2" href="{{ route('delgont.account.activitylog') }}">
-                <i class="bx bx-menu mr-1  text-dark font-weight-bold"></i>
+                <i class="bx bx-menu mr-1 dev  text-dark font-weight-bold"></i>
                 Activity Log
               </a>
               <a href="" class="dropdown-item py-2 border-top border-light" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">

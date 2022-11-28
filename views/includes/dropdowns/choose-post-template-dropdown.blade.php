@@ -3,12 +3,12 @@
         <i class='bx bx-layout bx-sm text-dark' data-toggle="tooltip" title="Choose Template"></i>
     </a>
     <div class="dropdown-menu dropdown-list shadow-sm animated--grow-in p-0 scrollable-menu scrollable custom-scrollbar" aria-labelledby="my-dropdown" style="border-radius: 0.rem;">
-        <h6 class="dropdown-header py-3 bg-light text-dark">
+        <h6 class="dropdown-header py-3 bg-light text-dark font-weight-bold">
             Choose Post Template
         </h6>
         @if (count($templates) && count($templates) > 0)
             @foreach ($templates as $template)
-                <a class="dropdown-item d-flex align-items-center py-2 select-post-template" id="selectPostTemplate" data-templateId="{{ $template->id }}" href="#">
+                <a class="dropdown-item d-flex align-items-center py-2 select-post-template" data-toggle="tooltip" data-title="{{ $template->description }}" id="selectPostTemplate" data-templateId="{{ $template->id }}" href="#">
                     <div class="mr-3">
                         <div class="rounded-circle">
                         <i class='bx bx-layout bx-sm text-danger'></i>
