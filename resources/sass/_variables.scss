@@ -1,0 +1,64 @@
+
+// Body
+$body-bg: #e1e8f8;
+
+// Typography
+$font-family-sans-serif: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell','Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !default;
+$font-family-serif: Georgia, 'Times New Roman', serif !default; // (C)
+$font-family-monospace: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
+
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$black: #435971 !default;
+
+$spacer: 1rem !default;
+
+// * Components
+// *******************************************************************************
+// scss-docs-start border-variables
+$border-width: 1px !default;
+$border-color: #e3e6f0 !default;
+$border-inner-color: none !default;
+// scss-docs-end border-variables
+$component-line-height: 1.54 !default; // (C)
+
+$enable-gradients: true;
+
+
+
+$card-spacer-y: $spacer * 1.5 !default;
+$card-spacer-x: $spacer * 1.5 !default;
+$card-title-font-size: arial !default; // (C)
+$card-title-spacer-y: $spacer * 0.875 !default;
+$card-spacer-x-sm: 1rem !default; // (C)
+$card-border-width: 0;
+$card-border-color: $border-color !default;
+$card-box-shadow: 0 2px 6px 0 rgba($black, 0.5) !default;
+$card-inner-border-color: $border-inner-color !default; // (C)
+$card-cap-padding-y: $spacer * 1.5 !default;
+
+$card-cap-bg: transparent !default;
+$card-img-overlay-padding: 1.5rem !default;
+
+$theme-colors: (
+    "light":      #e1e8f8,
+    "dark":       #06090c,
+    "primary":    #2a65f6,
+    "secondary":  #f29f67,
+    "info":       #3bcbf3,
+    "accent1":    #6ee7f8,
+    "accent2":    #ebfdff,
+    "accent3":    #0bd0fa,
+    "success":    #00cb79,
+    "warning":    #ecd600,
+    "danger":     #F05340,
+);

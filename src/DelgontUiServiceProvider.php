@@ -27,7 +27,7 @@ class DelgontUiServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../views', 'delgont');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'delgont');
 
         if ($this->app->runningInConsole()) {
             $this->registerPublishables();

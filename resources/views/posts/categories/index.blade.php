@@ -20,7 +20,6 @@
             <div class="col-lg-7">
                 <div class="card shadow-sm p-0 alert alert-light">
                     <div class="card-body text-dark">
-
                        @if (count($categories))
                        <div class="table-responsive">
                         <table class="table table-borderless table-hover">
@@ -29,6 +28,8 @@
                                     <input type="checkbox" name="" id="">
                                 </th>
                                 <th>Category</th>
+                                <th>Created On</th>
+                                <th>Actions</th>
                             </thead>
                             <tbody>
                                 @foreach ($categories as $category)
@@ -52,6 +53,11 @@
                        @else
                            
                        @endif
+                    </div>
+                    <div class="card-footer py-1">
+                        @if (count($categories))
+                            {{ $categories->links() }}
+                        @endif
                     </div>
                 </div>
             </div>

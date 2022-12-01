@@ -14,7 +14,9 @@
 
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
         <link href="{{ asset('css/delgont.css') }}" rel="stylesheet">
+
         @yield('requiredCss')
+
         @php
             $customCss = config('cmsui.css', [])
         @endphp
@@ -25,8 +27,9 @@
         @endif
 
         <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.min.js" defer></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
         <script src="{{ asset('js/delgont.js') }}" defer></script>
-        @yield('requiredJs')
     </head>
     <body class="custom-scrollbar page-top">
         <div class="" id="wrapper">
@@ -80,6 +83,8 @@
             <i class="bx bx-angle-up"></i>
         </a>
         <div id="snackbar">Some text some message..</div>
+
+        @yield('requiredJs')
     </body>
 
 </html>

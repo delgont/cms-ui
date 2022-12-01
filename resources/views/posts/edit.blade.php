@@ -85,16 +85,21 @@
 @section('content')
 <section class="mt-4">
     <div class="container-fluid">
-
-       
         <!-- Edit Post Form -->
         @includeIf('delgont::includes.forms.posts.edit-post-form', ['some' => 'data'])
     
     </div>
 </section>
 
+<section id="app">
+
+</section>
+
 <form action="{{ route('delgont.posts.destroy.featuredimage', ['id' => $post->id]) }}" method="POST" id="removePostFeaturedImageForm">
     @csrf
 </form>
+
+<div class="post-settings scrollable custom-scrollbar alert alert-white bg-white border border-light shadow-sm d-none">
+</div>
 
 @endsection

@@ -50,8 +50,20 @@
           <a class="collapse-item ml-lg-4" href="{{route('delgont.posts.create')}}">{{ __('Create Post') }}</a>
           <a class="collapse-item ml-lg-4" href="{{route('delgont.posts.posttypes')}}">{{ __('Post Types') }}</a>
           <a class="collapse-item ml-lg-4" href="{{route('delgont.posts.categories')}}">{{ __('Post Categories') }}</a>
-          <a class="collapse-item ml-lg-4" href="{{route('delgont.templates')}}">{{ __('Templates') }}</a>
-          <a class="collapse-item ml-lg-4" href="{{route('delgont.posts.posttypes')}}">{{ __('Sections') }}</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="nav-item sidebar-nav-item ">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#front" aria-expanded="true" aria-controls="front">
+        <i class='bx bxs-layout bx-sm sidebar-icon'></i>
+        <span>Front</span>
+      </a>
+      <div id="front" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <a class="collapse-item ml-lg-4 text-capitalize" href="{{route('delgont.templates')}}">{{ __('templates') }}</a>
+          <a class="collapse-item ml-lg-4 text-capitalize" href="{{route('delgont.templates.sections')}}">{{ __('sections') }}</a>
+          <a class="collapse-item ml-lg-4 text-capitalize" href="{{route('delgont.templates.sections')}}">{{ __('widgets') }}</a>
         </div>
       </div>
     </li>
@@ -61,6 +73,13 @@
       <a class="nav-link" href="{{route('delgont.menus')}}">
         <i class='bx bx-tag sidebar-icon'></i>
         <span>Menus</span></a>
+    </li>
+
+    <!-- Files | Media -->
+    <li class="nav-item sidebar-nav-item">
+      <a class="nav-link" href="{{route('delgont.files')}}">
+        <i class='bx bx-file sidebar-icon'></i>
+        <span>Files | Media</span></a>
     </li>
 
     <!-- Categories -->

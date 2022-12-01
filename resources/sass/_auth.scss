@@ -1,0 +1,22 @@
+body.empty {
+    background-color: #f9fbfb;
+    font-size: 13px;
+    section.auth {
+        padding-top: 8%;
+        #loginFormWrapper {
+            border-radius: 20px;
+            border: 1px solid #fdfdfd;
+            background-color: var(--white);
+        }
+    }
+    footer {
+        padding: 20px;
+        h6 {
+            font-weight: 900;
+        }
+        .links i.fa{
+            font-size: 20px;
+        }
+    }
+}
+

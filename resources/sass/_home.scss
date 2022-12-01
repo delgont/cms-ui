@@ -1,0 +1,21 @@
+.home {
+    .count-item {
+        border-radius: 50%;
+        height: 20vh;
+        width: 20vh;
+        padding-top: 40px;
+        border: 1px dashed;
+        display: inline-block;
+        margin-left: 18px;
+        margin-bottom: 5px;
+        i.icon {
+            position: absolute;
+            left: -16px;
+            padding: 10px;
+        }
+        h3{
+            margin: 0;
+            font-weight: 900;
+        }
+    }
+}

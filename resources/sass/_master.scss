@@ -1,0 +1,125 @@
+
+body {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #3a4a4d;
+  text-align: left;
+  background-color: var(--body-bg);
+  font-size: 13px !important;
+}
+
+  h1, h2, h3, h4, h5, h6{
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    padding: 0;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  h1.page-heading {
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    text-indent: 1rem;
+  }
+
+
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+
+
+
+.alerts {
+  background-color: transparent;
+  position: absolute;
+  height: auto;
+  width: 60%;
+  z-index: 999;
+  right: 20%;
+}
+
+.alerts .alert {
+  border-radius: 0%;
+}
+
+.sticky-lg{
+    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+    height: 20%;
+}
+
+
+.actions a, .actions-right a {
+  margin-left: 0.3rem;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+.scrollable {
+  height: auto;
+  max-height: 400px;
+  overflow-x: hidden;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: inherit;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+
+label.custom-file-upload {
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.post-settings {
+  position: absolute;
+  width: 260px;
+  max-height: 550px;
+  bottom: 13px !important;
+  right: 10px !important;
+}
