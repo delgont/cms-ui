@@ -36,10 +36,10 @@
                 <td>{{ ($post->updated_at) ? $post->updated_at->toFormattedDateString() : '' }}</td>
                 <td>{{ ($post->updatedBy != null) ? $post->updatedBy->name : 'System' }} <small>(Author)</small></td>
 
-                <td>
-                    <a href="{{ route('delgont.posts.edit', ['id' => $post->id]) }}" class=""><i class="bx bx-edit bx-sm"></i></a>
-                    <a href="{{ route('delgont.posts.create.duplicate', ['id' => $post->id]) }}" class=""><i class="bx bx-duplicate bx-sm"></i></a>
-                    <a href="{{ route('delgont.posts.destroy', ['id' => $post->id]) }}" class="text-danger"><i class="bx bx-trash bx-sm"></i></a>
+                <td class="p-2">
+                    <a href="{{ route('delgont.posts.edit', ['id' => $post->id]) }}" class="btn btn-sm text-primary p-1"><i class="bx bx-edit"></i> Edit</a>
+                    <a href="{{ route('delgont.posts.create.duplicate', ['id' => $post->id]) }}" class="btn btn-sm text-primary"><i class="bx bx-duplicate"></i> Duplicate</a>
+                    <a href="{{ route('delgont.posts.destroy', ['id' => $post->id]) }}" class="btn btn-sm text-danger"><i class="bx bx-trash"></i> Delete</a>
                 </td>
             </tr>
             <tr class="d-none">

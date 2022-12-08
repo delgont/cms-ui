@@ -2,7 +2,7 @@
 
 @section('title', 'Posts')
 
-@section('pageHeading', 'Posts')
+@section('pageHeading', 'Commands')
 
 @section('requiredJs')
 <script src="{{ asset('stephendevs/pagman/js/posts.js') }}" defer></script>
@@ -14,19 +14,25 @@
 <a href="{{ route('delgont.posts.trash') }}" class="text-primary" data-toggle="tooltip" title="Trash"><i class="bx bx-trash-alt bx-sm"></i></a>
 @endsection
 
-@section('search')
-    @include('delgont::includes.forms.search', ['action' => route('test')])
-@endsection
+
 
 @section('content')
 <section class="mt-4">
-    <div id="" class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="card shadow-sm p-0 alert alert-light">
-                    <div class="card-body">
-                        @include('delgont::include.table.postsTable', ['posts' => $posts])
-                    </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <form action="{{ route('delgont.commands.run') }}" method="POST">
+                    @csrf
+                    <input type="text" name="command" class="form-control" value="{{ old('command') }}">
+                    <input type="text" name="options" class="form-control">
+                    <button type="submit">run</button>
+                </form>
+
+                <div>
+                    {{ session('output') }}
                 </div>
             </div>
         </div>

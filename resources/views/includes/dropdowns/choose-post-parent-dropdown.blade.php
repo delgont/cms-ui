@@ -1,8 +1,8 @@
 <div class="dropdown d-inline show mr-1">
-    <a id="my-dropdown" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class='bx bx-layout bx-sm text-dark' data-toggle="tooltip" title="Choose Template"></i>
+    <a id="my-dropdown" class="dropdown-toggle btn btn-sm btn-transparent border border-light font-weight-bold" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class='bx bx-layout text-dark' data-toggle="tooltip" title="Choose Template"></i> Choose Parent Post
     </a>
-    <div class="dropdown-menu dropdown-list shadow-lg animated--grow-in p-0 scrollable custom-scrollbar" aria-labelledby="my-dropdown" style="border-radius: 0.rem;">
+    <div class="dropdown-menu dropdown-list shadow-lg animated--grow-in p-0 scrollable custom-scrollbar border border-info" aria-labelledby="my-dropdown" style="border-radius: 0.rem;">
         <h6 class="dropdown-header py-3 bg-light text-dark">
             Choose Parent Post
         </h6>

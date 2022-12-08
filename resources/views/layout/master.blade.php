@@ -26,9 +26,8 @@
             @endfor
         @endif
 
-        <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.min.js" defer></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script></script>
         <script src="{{ asset('js/delgont.js') }}" defer></script>
     </head>
     <body class="custom-scrollbar page-top">

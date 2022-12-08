@@ -49,32 +49,23 @@
                     </div>
                 </div>
                 <!-- Post Category -->
-                <div class="card">
+                <div class="card alert alert-info p-0 border border-info">
                     <div class="card-body">
-                        <h6 class="mb-2 text-capitalize">Categorize your post</h6>
+                        <h6 class="mb-2 text-capitalize text-dark font-weight-bold">Categorize your post</h6>
+                        <small>Each post | page can belong to specific categories</small><br />
                         @if (count($categories))
-                        @foreach ($categories as $category)
-                            <div class="form-check {{ ($category->parent_id) ? 'ml-3' : '' }}">
-                                <label class="form-check-label">
-                                    @if (count($duplicate->categories))
-                                        @php
-                                            $post_categories_ids = [];
-                                        @endphp
-                                        @foreach ($duplicate->categories as $post_categories)
-                                        @php
-                                            array_push($post_categories_ids, $post_categories->id)
-                                        @endphp 
-                                        @endforeach
-                                        <input type="checkbox" class="form-check-input" name="category[]" id="{{ 'category'.$category->id }}" value="{{ $category->id }}" {{ (in_array($category->id, $post_categories_ids)) ? 'checked' : ''}}>
-                                        {{ $category->name }}
-                                    @else
+                            @foreach ($categories as $category)
+                                <div class="form-check {{ ($category->parent_id) ? 'ml-3' : '' }}">
+                                    <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="category[]" id="{{ 'category'.$category->id }}" value="{{ $category->id }}">
                                     {{ $category->name }}
-                                    @endif
-                                </label>
-                            </div>
-                        @endforeach
-                    @endif
+                                    </label>
+                                </div>
+                            @endforeach
+                        @else
+                                <small class="font-weight-bold text-dark p-2">There are no categories for posts</small>
+                                <a href="{{ route('delgont.posts.categories.create') }}" class="btn btn-sm p-1 btn-light my-2"><i class="bx bx-plus"></i> Add Category</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -82,48 +73,31 @@
             <!-- post title, name and content -->
             <div class="col-lg-6">
         
-                <div class="card mb-1 p-0 alert alert-light">
-                    <div class="card-body py-2 row text-capitalize">
-                        <div class="col-lg-1">
-                            @include('delgont::includes.dropdowns.choose-post-parent-dropdown', ['currentPostParent' =>'Choose Parent Post Or Page'])
-                        </div>
-                        <div class="col-lg-3">
-                            <small>Post Parent</small>
-                            <h6 class="mb-0 small text-primary" id="postParentHolder" data-toggle="tooltip" title="{{ 'Choose Parent' }}">{{ 'Choose Parent' }}</h6>
-                        </div>
-                        <div class="col-lg-1">
-                            @includeIf('delgont::includes.dropdowns.choose-post-template-dropdown', ['currentPostTemplate' => 'Choose'])
-                        </div>
-                        <div class="col-lg-3">
-                            <small>Post Template</small>
-                            <h6 class="mb-0 small text-primary">{{ '' }}</h6>
-                        </div>
-                        <div class="col-lg-1">
-                            @includeIf('delgont::includes.dropdowns.choose-menu-dropdown', ['currentMenu' => 'Choose Menu'])
-                        </div>
-                        <div class="col-lg-3">
-                            <small>Menu</small>
-                            <h6 class="mb-0 small text-primary" id="menuNameHolder">{{ '' }}</h6>
-                        </div>
-                        <input type="hidden" name="template_id" value="{{ old('template_id') }}" id="templateIdInput" />
-                        <input type="hidden" name="parent_id" value="{{ old('parent_id') }}" id="parentIdInput" />
-                        <input type="hidden" name="menu_id" value="{{ old('menu_id') }}" id="menuIdInput" />
-                    </div>
+                <div class="text-center">
+                    @includeIf('delgont::includes.dropdowns.choose-menu-dropdown', ['currentMenu' => 'Choose Menu'])
+                    @include('delgont::includes.dropdowns.choose-post-parent-dropdown', ['currentPostParent' =>'Choose Parent Post Or Page'])
+                    @includeIf('delgont::includes.dropdowns.choose-post-template-dropdown', ['currentPostTemplate' => 'Choose'])
                 </div>
+
+                <input type="hidden" name="template_id" value="{{ old('template_id') }}" id="templateIdInput" />
+                <input type="hidden" name="parent_id" value="{{ old('parent_id') }}" id="parentIdInput" />
+                <input type="hidden" name="menu_id" value="{{ old('menu_id') }}" id="menuIdInput" />
         
-                <div class="card shadow-sm mb-3 p-0 alert alert-light">
+                <div class="card shadow-sm mb-3 p-0 alert alert-light mt-3">
                     <div class="card-body">
                         <label for="title">Post Title</label>
                         <textarea name="post_title" id="title" cols="10" rows="1" class="form-control" placeholder="Post Title">{{ old('post_title') ?? ($duplicate->post_title) ?? ''}}</textarea>
                         <small class="text-danger post-title-error">{{ $errors->first('post_title') }}</small>
                     </div>
                 </div>
+
                 <div class="card shadow-sm alert p-0 alert-light">
                     <div class="card-body p-0">
                         <textarea name="post_content" id="editor" class="form-control mt-4" cols="30" rows="10" placeholder="Post Body">{{ old('post_content') ?? $duplicate->post_content }}</textarea>
         
                     </div>
                 </div>
+                
             </div>
         
             <div class="col-lg-3">

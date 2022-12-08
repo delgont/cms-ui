@@ -3,7 +3,7 @@
    
     <!-- Column 1 -->
     <div class="col-lg-3">
-        <div class="card mb-3 p-0 alert alert-light">
+        <div class="card mb-3 p-0 alert alert-light border border-success">
             <div class="card-body">
 
                 <!-- Post Type -->
@@ -33,9 +33,10 @@
             </div>
         </div>
         <!-- Post Category -->
-        <div class="card">
+        <div class="card alert alert-info p-0 border border-info">
             <div class="card-body">
                 <h6 class="mb-2 text-capitalize text-dark font-weight-bold">Categorize your post</h6>
+                <small>Each post | page can belong to specific categories</small><br />
                 @if (count($categories))
                     @foreach ($categories as $category)
                         <div class="form-check {{ ($category->parent_id) ? 'ml-3' : '' }}">
@@ -45,6 +46,9 @@
                             </label>
                         </div>
                     @endforeach
+                @else
+                        <small class="font-weight-bold text-dark p-2">There are no categories for posts</small>
+                        <a href="{{ route('delgont.posts.categories.create') }}" class="btn btn-sm p-1 btn-light my-2"><i class="bx bx-plus"></i> Add Category</a>
                 @endif
             </div>
         </div>
@@ -53,36 +57,18 @@
     <!-- post title, name and content -->
     <div class="col-lg-6">
 
-        <div class="card mb-1 p-0 alert alert-light">
-            <div class="card-body py-2 row text-capitalize">
-                <div class="col-lg-1">
-                    @include('delgont::includes.dropdowns.choose-post-parent-dropdown', ['currentPostParent' =>'Choose Parent Post Or Page'])
-                </div>
-                <div class="col-lg-3">
-                    <small>Post Parent</small>
-                    <h6 class="mb-0 small text-primary" id="postParentHolder" data-toggle="tooltip" title="{{ 'Choose Parent' }}">{{ 'Choose Parent' }}</h6>
-                </div>
-                <div class="col-lg-1">
-                    @includeIf('delgont::includes.dropdowns.choose-post-template-dropdown', ['currentPostTemplate' => 'Choose'])
-                </div>
-                <div class="col-lg-3">
-                    <small>Post Template</small>
-                    <h6 class="mb-0 small text-primary">{{ '' }}</h6>
-                </div>
-                <div class="col-lg-1">
-                    @includeIf('delgont::includes.dropdowns.choose-menu-dropdown', ['currentMenu' => 'Choose Menu'])
-                </div>
-                <div class="col-lg-3">
-                    <small>Menu</small>
-                    <h6 class="mb-0 small text-primary" id="menuNameHolder">{{ '' }}</h6>
-                </div>
-                <input type="hidden" name="template_id" value="{{ old('template_id') }}" id="templateIdInput" />
-                <input type="hidden" name="parent_id" value="{{ old('parent_id') }}" id="parentIdInput" />
-                <input type="hidden" name="menu_id" value="{{ old('menu_id') }}" id="menuIdInput" />
-            </div>
+        <div class="text-center">
+            @includeIf('delgont::includes.dropdowns.choose-menu-dropdown', ['currentMenu' => 'Choose Menu'])
+            @include('delgont::includes.dropdowns.choose-post-parent-dropdown', ['currentPostParent' =>'Choose Parent Post Or Page'])
+            @includeIf('delgont::includes.dropdowns.choose-post-template-dropdown', ['currentPostTemplate' => 'Choose'])
         </div>
 
-        <div class="card shadow-sm mb-3 p-0 alert alert-light">
+        <input type="hidden" name="template_id" value="{{ old('template_id') }}" id="templateIdInput" />
+        <input type="hidden" name="parent_id" value="{{ old('parent_id') }}" id="parentIdInput" />
+        <input type="hidden" name="menu_id" value="{{ old('menu_id') }}" id="menuIdInput" />
+
+
+        <div class="card shadow-sm mb-3 p-0 alert alert-light mt-lg-2">
             <div class="card-body">
                 <label for="title" class="text-dark font-weight-bold">Post Title</label>
                 <textarea name="post_title" id="title" cols="10" rows="1" class="form-control" placeholder="Post Title">{{ old('post_title') }}</textarea>
@@ -100,12 +86,12 @@
     <div class="col-lg-3">
 
          <!--Post Post types-->
-         <div class="card mb-2 alert alert-light p-1">
+         <div class="card mb-2 alert alert-light p-1 mt-4">
             <div class="card-body py-2">
                 @if (count($posttypes) > 0)
                 <small class="text-dark font-weight-bold">Choose the type of posts to show as listing on this Post | Page</small>
                 <div class="dropdown">
-                    <a id="my-dropdown" class="dropdown-toggle btn btn-sm btn-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a id="my-dropdown" class="dropdown-toggle btn btn-sm btn-info border border-info my-2 font-weight-bold" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span style="font-size: 14px;" class="text-capitalize" data-toggle="tooltip" title="Select Post Type">
                             {{ 'Choose Post Type' }}
                         </span>
@@ -137,10 +123,9 @@
             <div class="card-body p-2">
               <h6 class="card-title mb-2 text-dark font-weight-bold">Choose Featured Image</h6>
               <input type="file" name="post_featured_image" id="selectPostFeaturedImage" data-toggle="readImageAsDataURL" data-target="#postFeaturedImageHolder" hidden />
-              <label for="selectPostFeaturedImage" class="custom-file-upload text-primary" data-toggle="tooltip" title="Choose Featured Image">
-                  <i class="bx bx-sm bx-file"></i>
+              <label for="selectPostFeaturedImage" class="custom-file-upload btn btn-sm bg-transparent py-1 px-2 border-info  text-primary" data-toggle="tooltip" title="Choose Featured Image">
+                  <i class="bx bx-file"></i> Choose Image
               </label>
-              <a href="" class="text-danger" data-toggle="tooltip" title="Remove Featured Image"><i class='bx bx-sm bx-library'></i></a>
                 <small class="text-danger featured-image-error">
                     {{ $errors->first('post_featured_image') }}
                 </small>

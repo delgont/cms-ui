@@ -13,7 +13,9 @@
     </a>
 @endsection
 
-
+@section('search')
+    @include('delgont::includes.forms.search', ['action' => route('delgont.posts.search')])
+@endsection
 
 
 @section('content')
