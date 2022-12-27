@@ -1,11 +1,7 @@
 require('./bootstrap');
 
-require('./ckeditor');
-
-require('./files');
-
-
 (function ($){
+
 
   let snackbar = $('#snackbar');
 
@@ -224,11 +220,10 @@ require('./files');
      $('a.add-menuitem-to-menu').on('click', function(e){
       e.preventDefault();
       let form = $(this).data('form');
-      $('#' + form).submit();
+      $(form).submit();
      });
 
-    
-
+     CKEDITOR.replace('editor');
 
 })(jQuery);
 

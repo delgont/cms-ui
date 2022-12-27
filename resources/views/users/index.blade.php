@@ -43,7 +43,7 @@
                                             <span class="badge badge-primary">{{ $user->type }}</span><hr class="m-0 p-0" />
                                             <small class="text-dark font-weight-bold">{{ $user->name }} </small>
                                             <a class="" href="{{ '#my-collapse'.$user->id }}" data-toggle="collapse" aria-expanded="false" aria-controls="{{ 'my-collapse'.$user->id }}">
-                                                <h6 class="mb-0 text-capitalize text-dark font-weight-bold " >{{ $user->userable->first_name.' '.$user->userable->last_name }}</h6>
+                                                <h6 class="mb-0 text-capitalize text-dark font-weight-bold " >{{ ($user->userable) ? $user->userable->first_name.' '.$user->userable->last_name : '' }}</h6>
                                             </a>
                                         </div>
                                         <div class="col-lg-3">

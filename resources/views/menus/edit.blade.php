@@ -28,7 +28,7 @@
                                 <div class="row alert alert-info mb-1 rounded">
                                     <div class="col-lg-8 text-capitalize"><h6 class="mb-0">{{ str_limit($post->post_title, 15) }}</h6> <small>{{ $post->type }}</small></div>
                                     <div class="col-lg-4">
-                                        <a href="" class="add-menuitem-to-menu d-inline-block" data-form="{{ 'addMenuItemForm'.$post->id }}"><i class="bx bx-sm bx-plus"></i></a>
+                                        <a href="" class="add-menuitem-to-menu d-inline-block" data-form="{{ '#addMenuItemForm'.$post->id }}"><i class="bx bx-sm bx-plus"></i></a>
                                         <a href="{{ '#addMenuItemToMenuFormWrapper'.$post->id }}" class="add-edit d-inline-block" data-toggle="collapse"><i class="bx bx-sm bx-list-plus"></i></a>
                                     </div>
                                 </div>
@@ -57,6 +57,7 @@
                                             <input type="hidden" name="menu_id" value="{{ $menu->id }}">
                                             <input type="hidden" name="menuable_id" value="{{ $post->id }}">
                                         </div>
+                                        <input type="submit" value="hello" class="btn btn-sm">
                                     </form>
                                 </div>
                                 @endforeach

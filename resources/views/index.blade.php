@@ -1,8 +1,7 @@
 @extends('delgont::layout.master')
 
 @section('title', 'Dashboard | Home')
-@section('pageHeading', 'Dashboard2')
-
+@section('pageHeading', 'Dashboard')
 
 @section('search')
     @include('delgont::includes.forms.search', ['action' => route('delgont.posts.search')])
@@ -12,7 +11,6 @@
 @section('content')
 <section class="mt-4 home">
     <div class="container-fluid">
-        <div class="row" id="app">gg</div>
         <div class="row">
 
             <div class="col-lg-8">
