@@ -24,7 +24,7 @@
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <form action="{{ route('delgont.commands.run') }}" method="POST">
+                <form action="{{ route('delgont.console.commands.run') }}" method="POST">
                     @csrf
                     <input type="text" name="command" class="form-control" value="{{ old('command') }}">
                     <input type="text" name="options" class="form-control">
@@ -32,7 +32,7 @@
                 </form>
 
                 <div>
-                    {{ session('output') }}
+                    {{ session('res') }}
                 </div>
             </div>
         </div>

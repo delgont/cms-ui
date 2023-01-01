@@ -2,3 +2,6 @@
 <br />
 <br />
 
+
+#### # Browser Support
+`Apple Safari` `Google Chrome` `Microsoft Edge` `Mozilla Firefox`

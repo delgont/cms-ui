@@ -74,15 +74,23 @@
         </div>
 
         <!-- Post Category -->
-        <div class="card alert alert-info p-0 border border-info">
+        <div class="card alert alert-light p-0 border border-info">
+            @php
+                $postCategoriesId = [];
+                if (count($post->categories)) {
+                    foreach ($post->categories as $category) {
+                        array_push($postCategoriesId, $category->id);
+                    }
+                }
+            @endphp
             <div class="card-body">
                 <h6 class="mb-2 text-capitalize text-dark font-weight-bold">Categorize your post</h6>
                 <small>Each post | page can belong to specific categories</small><br />
                 @if (count($categories))
                     @foreach ($categories as $category)
                         <div class="form-check {{ ($category->parent_id) ? 'ml-3' : '' }}">
-                            <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" name="category[]" id="{{ 'category'.$category->id }}" value="{{ $category->id }}">
+                            <label class="form-check-label text-capitalize {{ ($category->hidden) ? 'text-info' : 'text-primary' }}">
+                            <input type="checkbox" class="form-check-input" name="category[]" id="{{ 'category'.$category->id }}" value="{{ $category->id }}" {{ (in_array($category->id, $postCategoriesId)) ? 'checked' : '' }}>
                             {{ $category->name }}
                             </label>
                         </div>

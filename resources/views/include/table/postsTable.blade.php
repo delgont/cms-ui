@@ -11,7 +11,6 @@
             <th>Category</th>
             <th>CreatedOn</th>
             <th>LastUpdate</th>
-            <th>UpdatedBy</th>
             <th></th>
         </thead>
         <tbody>
@@ -21,7 +20,7 @@
                     <input type="checkbox">
                 </td>
                 <td>{{ str_limit($post->post_title, 20) }}</td>
-                <td>{{ ($post->author != null) ? $post->author->name : 'System' }}</td>
+                <td>{{ ($post->author != null) ? $post->author->name : 'Undefined' }}</td>
                 <td>{{ ($post->posttype) ? $post->posttype->name : 'Unspecified' }}</td>
                 <td>
                     @if (count($post->categories))
@@ -34,7 +33,6 @@
                 </td>
                 <td>{{ ($post->created_at) ? $post->created_at->toFormattedDateString() : '' }}</td>
                 <td>{{ ($post->updated_at) ? $post->updated_at->toFormattedDateString() : '' }}</td>
-                <td>{{ ($post->updatedBy != null) ? $post->updatedBy->name : 'System' }} <small>(Author)</small></td>
 
                 <td class="p-2">
                     <a href="{{ route('delgont.posts.edit', ['id' => $post->id]) }}" class="btn btn-sm text-primary p-1"><i class="bx bx-edit"></i> Edit</a>
